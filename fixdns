@@ -1,0 +1,13 @@
+#!/bin/bash
+if [[ $EUID -ne 0 ]];
+then
+#echo "User is not root; Why yo no listen!"
+whiptail --msgbox "You're not root; Why yo no listen!" --title "Script run failure!" 0 0
+clear
+exit 1
+else
+rm /etc/resolv.conf
+ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+reboot
+exit 0
+fi
