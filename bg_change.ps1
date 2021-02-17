@@ -1,0 +1,1 @@
+Set-ItemProperty 'HKCU:\Control Panel\Colors' -Name Background -Value "116 164 2"
